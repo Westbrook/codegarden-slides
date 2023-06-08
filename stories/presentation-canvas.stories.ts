@@ -1,7 +1,40 @@
 import { html, TemplateResult } from 'lit';
 import '../src/p-canvas.js';
 import '../src/p-slide.js';
-import { a11y1, a11y2, built, comments, firefly, first, lazy, litReact, locator, microfontends, mweb, owc, psw1, psw2, react, react2, react3, scoped, shadow, shadow1, shadow2, shadow3a, shadow3b, slotted, swc, swc1, swc2, swc3, swc4, swc5, w3c } from './assets.js';
+import {
+  a11y1,
+  a11y2,
+  built,
+  comments,
+  firefly,
+  first,
+  lazy,
+  litReact,
+  locator,
+  microfontends,
+  mweb,
+  owc,
+  psw1,
+  psw2,
+  react,
+  react2,
+  react3,
+  scoped,
+  shadow,
+  shadow1,
+  shadow2,
+  shadow3a,
+  shadow3b,
+  slotted,
+  swc,
+  swc1,
+  swc2,
+  swc3,
+  swc4,
+  swc5,
+  w3c,
+  westbrook,
+} from './assets.js';
 
 export default {
   title: 'PresentationCanvas',
@@ -23,7 +56,7 @@ interface ArgTypes {
   row?: number;
 }
 
-const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
+const Template: Story<ArgTypes> = ({ col = 0, row = 0 }: ArgTypes) => html`
   <style>
     :root {
       font-size: 4vh;
@@ -40,10 +73,13 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
       margin-block-start: 1em;
     }
     .fixed-width {
-      width: 60vw;
+      width: 65vw;
     }
     li {
       margin: 0.75em 0;
+    }
+    .full li {
+      margin: initial;
     }
     li.check::marker {
       content: '✅  ';
@@ -51,23 +87,109 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
     li.warning::marker {
       content: '⚠️  ';
     }
+    [slot=link] a {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    [slot=link] img {
+      max-width: 25vw;
+    }
+    [slot=link] span {
+      margin-right: 1em;
+    }
+    .emoji {
+      margin: 0;
+      font-size: 5em;
+    }
+    li span {
+      display: inline-grid;
+      width: 1ch;
+      height: 1ch;
+      font-size: 2em;
+      place-content: center;
+      bottom: -0.15em;
+      position: relative;
+      left: 0.25em;
+      margin-top: -5px;
+    }
   </style>
   <p-canvas style="--show-col: ${col}; --show-row: ${row};">
     <p-slide style="--col: 0; --row: 0;">
       <h1>Scaling <span style="display: inline-block; translate: 0 -3vh;">up</span> and <span style="display: inline-block; translate: 0 3vh;">down</span> with Web Components</h1>
-      <h2>And, sometimes, just the web...</h2>
-      <hr style="width: 50%; margin: 1.5em auto 1em;border: 2px solid" />
-      <p style="text-align:right">Westbrook Johnson<br/>Sr. Computer Scientist, Adobe</p>
+      <h2 hidden>And, sometimes, just the web...</h2>
+      <hr style="width: 50%; margin: 2.5em auto 1.5em;border: 2px solid" />
+      <p style="text-align:right">Westbrook Johnson<br/>Adobe</p>
     </p-slide>
     <p-slide style="--col: 0; --row: 1;">
       <div class="fixed-width">
-        <h3>Agenda</h3>
-        <ol style="line-height: 2">
+        <h3>What type of scale?</h3>
+        <ol>
+          <li style="visibility: hidden"><strong>Base scale</strong>: app scale or bust
+          <li style="visibility: hidden"><strong>Scaling down</strong>: quality ingredients, quality apps
+          <li style="visibility: hidden"><strong>Scaling up</strong>: measure twice, cut once (for every app)
+          <li style="visibility: hidden"><strong>Between the apps</strong>: shipping with micro-frontends
+          <li style="visibility: hidden"><strong>"Full-scale" apps</strong>: integrating with other companies
+        </ol>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 0; --row: 2;">
+      <div class="fixed-width">
+        <h3>What type of scale?</h3>
+        <ol>
           <li><strong>Base scale</strong>: app scale or bust
-          <li><strong>Scaling down</strong>: quality ingreedients, quality apps
+          <li style="visibility: hidden"><strong>Scaling down</strong>: quality ingredients, quality apps
+          <li style="visibility: hidden"><strong>Scaling up</strong>: measure twice, cut once (for every app)
+          <li style="visibility: hidden"><strong>Between the apps</strong>: shipping with micro-frontends
+          <li style="visibility: hidden"><strong>"Full-scale" apps</strong>: integrating with other companies
+        </ol>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 0; --row: 3;">
+      <div class="fixed-width">
+        <h3>What type of scale?</h3>
+        <ol>
+          <li><strong>Base scale</strong>: app scale or bust
+          <li><strong>Scaling down</strong>: quality ingredients, quality apps
+          <li style="visibility: hidden"><strong>Scaling up</strong>: measure twice, cut once (for every app)
+          <li style="visibility: hidden"><strong>Between the apps</strong>: shipping with micro-frontends
+          <li style="visibility: hidden"><strong>"Full-scale" apps</strong>: integrating with other companies
+        </ol>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 0; --row: 4;">
+      <div class="fixed-width">
+        <h3>What type of scale?</h3>
+        <ol>
+          <li><strong>Base scale</strong>: app scale or bust
+          <li><strong>Scaling down</strong>: quality ingredients, quality apps
           <li><strong>Scaling up</strong>: measure twice, cut once (for every app)
-          <li><strong>Between the apps</strong>: scaling with micro-frontends
-          <li><strong>"Full-scale" apps</strong>: shipping outside your company
+          <li style="visibility: hidden"><strong>Between the apps</strong>: shipping with micro-frontends
+          <li style="visibility: hidden"><strong>"Full-scale" apps</strong>: integrating with other companies
+        </ol>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 0; --row: 5;">
+      <div class="fixed-width">
+        <h3>What type of scale?</h3>
+        <ol>
+          <li><strong>Base scale</strong>: app scale or bust
+          <li><strong>Scaling down</strong>: quality ingredients, quality apps
+          <li><strong>Scaling up</strong>: measure twice, cut once (for every app)
+          <li><strong>Between the apps</strong>: shipping with micro-frontends
+          <li style="visibility: hidden"><strong>"Full-scale" apps</strong>: integrating with other companies
+        </ol>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 0; --row: 6;">
+      <div class="fixed-width">
+        <h3>What type of scale?</h3>
+        <ol>
+          <li><strong>Base scale</strong>: app scale or bust
+          <li><strong>Scaling down</strong>: quality ingredients, quality apps
+          <li><strong>Scaling up</strong>: measure twice, cut once (for every app)
+          <li><strong>Between the apps</strong>: shipping with micro-frontends
+          <li><strong>"Full-scale" apps</strong>: integrating with other companies
         </ol>
       </div>
     </p-slide>
@@ -79,31 +201,52 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
       <img style="width: 60vw; height: auto;" alt="Code sample for a slide in this presentation" src=${built} />
       <h4>What more could you want?</h4>
     </p-slide>
-    <p-slide style="--col: 1; --row: 4;">
+    <p-slide style="--col: 1; --row: 2;">
       <div class="fixed-width">
-        <h3>W3C Web Component Community Group</h3>
-        <h4>Chairperson</h4>
+        <h3>Modern Web</h3>
+        <h4>Core team memeber</h4>
       </div>
-      <img alt="QR Code linking to the W3C Web Component Community Group GitHub repo" slot="link" src=${w3c} />
+      <div slot="link">
+        <a href="https://modern-web.dev">
+          <img alt="QR Code linking to modern-web.dev" src=${mweb} />
+          <span>https://modern-web.dev</span>
+        </a>
+      </div>
     </p-slide>
     <p-slide style="--col: 1; --row: 3;">
       <div class="fixed-width">
         <h3>Open Web Components</h3>
         <h4>Core team memeber</h4>
       </div>
-      <img alt="QR Code linking to open-wc.org" slot="link" src=${owc} />
-    </p-slide>
-    <p-slide style="--col: 1; --row: 2;">
-      <div class="fixed-width">
-        <h3>Modern Web</h3>
-        <h4>Core team memeber</h4>
+      <div slot="link">
+        <a href="https://open-wc.org">
+          <img alt="QR Code linking to open-wc.org" src=${owc} />
+          <span>https://open-wc.org</span>
+        </a>
       </div>
-      <img alt="QR Code linking to modern-web.dev" slot="link" src=${mweb} />
+    </p-slide>
+    <p-slide style="--col: 1; --row: 4;">
+      <div class="fixed-width">
+        <h3>W3C Web Component Community Group</h3>
+        <h4>Chairperson</h4>
+      </div>
+      <div slot="link">
+        <a href="https://github.com/w3c/webcomponents-cg">
+          <img alt="QR Code linking to the W3C Web Component Community Group GitHub repo" src=${w3c} />
+          <span>https://github.com/w3c/webcomponents-cg</span>
+        </a>
+      </div>
     </p-slide>
     <p-slide style="--col: 1; --row: 5;">
       <div class="fixed-width">
         <h3>First web component-centric GitHub commit</h3>
         <h4>Aug 9, 2014; insert naked baby photo here...</h4>
+      </div>
+      <div slot="link">
+        <a href="https://github.com/Westbrook/ps-polymer/commit/898a03c984f892a856b7d3669c7448896f1d07f9">
+          <img alt="QR Code linking my first web component-centric commit on GitHub" src=${first} />
+          <span>https://github.com/...</span>
+        </a>
       </div>
       <img alt="QR Code linking to my first web component-centric commit on GitHub" slot="link" src=${first} />
     </p-slide>
@@ -113,7 +256,12 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <h4>Tech Lead</h4>
         <h4>Adobe</h4>
       </div>
-      <img alt="QR Code linking to opesource.adobe.com/spectrum-web-components" slot="link" src=${swc} />
+      <div slot="link">
+        <a href="https://opesource.adobe.com/spectrum-web-components">
+          <img alt="QR Code linking to opesource.adobe.com/spectrum-web-components" src=${swc} />
+          <span>https://opesource.adobe.com/spectrum-web-components</span>
+        </a>
+      </div>
     </p-slide>
     <p-slide style="--col: 2; --row: 0;">
       <h2 style="filter: drop-shadow(0 0 1px #fff);">Photoshop</h2>
@@ -130,24 +278,22 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <h3>Custom Elements Locator</h3>
         <h4>Chrome plugin</h4>
       </div>
-      <img alt="QR Code linking to the Custom Elements Locator Chrome plugin" slot="link" src=${locator} />
-    </p-slide>
-    <p-slide style="--col: 2; --row: 4;">
-      <div class="fixed-width">
-        <h3>Takeaway</h3>
-        <p>You can see the custom elements used on a page with Custom Elements Locator</p>
-        <p>🕵🏼</p>
+      <div slot="link">
+        <a href="https://chrome.google.com/webstore/detail/custom-elements-locator/eccplgjbdhhakefbjfibfhocbmjpkafc">
+          <img alt="QR Code linking to the Custom Elements Locator Chrome plugin" src=${locator} />
+          <span>https://chrome.google.com/...</span>
+        </a>
       </div>
     </p-slide>
-    <p-slide style="--col: 2; --row: 5;">
+    <p-slide style="--col: 2; --row: 4;">
       <div class="fixed-width">
         <h3>Custom Elements Located</h3>
         <h4>88 custom elements 😲</h4>
       </div>
       <img alt="Custom Elements Locator display for PSWeb" slot="link" src=${psw2} />
     </p-slide>
-    <p-slide style="--col: 2; --row: 6;">
-      <ul style="columns: 4; font-size: 0.6em; padding: 0; list-style: none; font-family: monospace; line-height: initial">
+    <p-slide style="--col: 2; --row: 5;">
+      <ul class="full" style="columns: 4; font-size: 0.6em; padding: 0; list-style: none; font-family: monospace; line-height: initial">
         <li>&lt;overlay-trigger&gt;
         <li>&lt;psw-app&gt;
         <li>&lt;psw-app-context&gt;
@@ -238,22 +384,25 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <li>&lt;xue-morebar-menu&gt;
       </ul>
     </p-slide>
-    <p-slide style="--col: 2; --row: 7;">
-        <h3 style="font-size: 100px">🤯</h3>
+    <p-slide style="--col: 2; --row: 6;">
+      <div class="fixed-width">
+        <h3>Takeaway</h3>
+        <p>You can see the custom elements used on a page with Custom Elements Locator</p>
+        <p class="emoji">🕵🏼</p>
+      </div>
     </p-slide>
-    <p-slide style="--col: 2; --row: 8;">
+    <p-slide style="--col: 2; --row: 7;">
       <div class="fixed-width">
         <h3><code>&lt;psw-*&gt;</code></h3>
         <p>46 Photoshop Web specific elements</p>
         <h3><code>&lt;ue-*&gt;</code> & <code>&lt;xue-*&gt;</code></h3>
-        <p>11 higher level organisms*</p>
+        <p>11 higher level compositions of individual design patterns</p>
         <h3><code>&lt;sp-*&gt;</code></h3>
-        <p>31 atomic members of the Spectrum design language</p>
+        <p>31 patterns from the Spectrum design language</p>
       </div>
-      <p slot="footnote">*The word "organisms" here comes from Brad Frost's <a href="https://atomicdesign.bradfrost.com/">Atomic Design Methodology</a>.</p>
    </p-slide>
-    <p-slide style="--col: 2; --row: 9;">
-      <h3>So, about those <code>&lt;sp-*&gt;</code> elements...</h3>
+    <p-slide style="--col: 2; --row: 8;">
+      <h3>Let's take a closer look at those <code>&lt;sp-*&gt;</code> elements...</h3>
     </p-slide>
     <p-slide style="--col: 3; --row: 0;">
       <h2>Spectrum Web Components</h2>
@@ -291,9 +440,8 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
       <div class="fixed-width">
         <h3>Takeaway</h3>
         <p>Custom elements are great for lazy loading</p>
-        <p>😴 ... 🥳</p>
+        <p class="emoji">😴</p>
       </div>
-      <img alt="Custom Elements Locator display for the SWC documentation site" slot="link" src=${swc2} />
     </p-slide>
     <p-slide style="--col: 3; --row: 8;">
       <div class="fixed-width">
@@ -320,7 +468,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
     <p-slide style="--col: 3; --row: 11;">
       <div class="fixed-width">
         <h3>Browser powered encapsulation</h3>
-        <p>Shadow DOM</p>
+        <p>As provided by Shadow DOM</p>
       </div>
     </p-slide>
     <p-slide style="--col: 3; --row: 12;">
@@ -386,7 +534,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
       <div class="fixed-width">
         <h3>Takeaway</h3>
         <p>Encapsulation via Shadow DOM focuses your work</p>
-        <p>🎯</p>
+        <p class="emoji">🎯</p>
       </div>
     </p-slide>
     <p-slide style="--col: 3; --row: 21;">
@@ -424,7 +572,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
     </p-slide>
     <p-slide style="--col: 3; --row: 25;">
       <h3>Modifiable Custom Properties (Spectrum Button)</h3>
-      <ul style="columns: 3; font-size: 0.6em; padding: 0; list-style: none; font-family: monospace; line-height: initial">
+      <ul class="full" style="columns: 3; font-size: 0.6em; padding: 0; list-style: none; font-family: monospace; line-height: initial">
         <li><code>--mod-bold-font-weight</code>
         <li><code>--mod-button-animation-duration</code>
         <li><code>--mod-button-background-color-default</code>
@@ -487,7 +635,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
       <div class="fixed-width">
         <h3>Takeaway</h3>
         <p>Encapsulation requires extra planning</p>
-        <p>📝</p>
+        <p class="emoji">📝</p>
       </div>
     </p-slide>
     <p-slide style="--col: 4; --row: 0;">
@@ -502,7 +650,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <ul>
           <li style="visibility: hidden">It leverages generative AI
           <li style="visibility: hidden">Being built as a partnership across a number of teams
-          <li style="visibility: hidden">Requires compliance with Spectrum
+          <li style="visibility: hidden">Has to ship in Adobe's design language
           <li style="visibility: hidden">Is built in React
         </ul>
       </div>
@@ -513,7 +661,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <ul>
           <li>It leverages generative AI
           <li style="visibility: hidden">Being built as a partnership across a number of teams
-          <li style="visibility: hidden">Requires compliance with Spectrum
+          <li style="visibility: hidden">Has to ship in Adobe's design language
           <li style="visibility: hidden">Is built in React
         </ul>
       </div>
@@ -524,7 +672,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <ul>
           <li>It leverages generative AI
           <li>Being built as a partnership across a number of teams
-          <li style="visibility: hidden">Requires compliance with Spectrum
+          <li style="visibility: hidden">Has to ship in Adobe's design language
           <li style="visibility: hidden">Is built in React
         </ul>
       </div>
@@ -535,7 +683,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <ul>
           <li>It leverages generative AI
           <li>Being built as a partnership across a number of teams
-          <li>Requires compliance with Spectrum
+          <li>Has to ship in Adobe's design language
           <li style="visibility: hidden">Is built in React
         </ul>
       </div>
@@ -546,7 +694,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <ul>
           <li>It leverages generative AI
           <li>Being built as a partnership across a number of teams
-          <li>Requires compliance with Spectrum
+          <li>Has to ship in Adobe's design language
           <li>Is built in React
         </ul>
       </div>
@@ -555,7 +703,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
       <div class="fixed-width">
         <h3>Takeaway</h3>
         <p>Custom Elements are interoperable across tools</p>
-        <p>🤝</p>
+        <p class="emoji">🤝</p>
       </div>
     </p-slide>
     <p-slide style="--col: 4; --row: 8;">
@@ -563,13 +711,23 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
         <h3>Custom Elements Everywhere</h3>
         <img style="height: 70vh; width: 800px; object-fit: cover; object-position: top center;" alt="Screen shot of https://custom-elements-everywhere.com/'s results for React" slot="staged" src=${react} />
       </div>
-      <img alt="QR Code linking to https://custom-elements-everywhere.com/" slot="link" src=${react2} />
+      <div slot="link">
+        <a href="https://custom-elements-everywhere.com/">
+          <img alt="QR Code linking to https://custom-elements-everywhere.com/" src=${react2} />
+          <span>https://custom-elements-everywhere.com/</span>
+        </a>
+      </div>
     </p-slide>
     <p-slide style="--col: 4; --row: 9;">
       <div class="fixed-width">
         <img style="height: 90vh; width: auto;" alt="Code sample of a wrapping an SWC component for React" slot="staged" src=${react3} />
       </div>
-      <img alt="QR Code linking to documentation for Lit La" slot="link" src=${litReact} />
+      <div slot="link">
+        <a href="https://www.npmjs.com/package/@lit-labs/react">
+          <img alt="QR Code linking to documentation for Lit Labs React" src=${litReact} />
+          <span>https://www.npmjs.com/package/@lit-labs/react</span>
+        </a>
+      </div>
     </p-slide>
     <p-slide style="--col: 4; --row: 10;">
       <div class="fixed-width">
@@ -666,7 +824,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
       <div class="fixed-width">
         <h3>Takeaway</h3>
         <p>Wrap micro-fontends quite nicely</p>
-        <p>🎁</p>
+        <p class="emoji">🎁</p>
       </div>
     </p-slide>
     <p-slide style="--col: 5; --row: 9;">
@@ -733,7 +891,7 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
       <div class="fixed-width">
         <h3>Takeaway</h3>
         <p>Not awesome (yet) <em>in</em> micro-frontends</p>
-        <p>⚔️</p>
+        <p class="emoji">⚔️</p>
       </div>
     </p-slide>
     <p-slide style="--col: 6; --row: 0;">
@@ -741,29 +899,226 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
     </p-slide>
     <p-slide style="--col: 6; --row: 1;">
       <div class="fixed-width">
+        <h3>Scaling beyond just one company</h3>
+        <ul>
+          <li style="visibility: hidden">Web components are interoperable between companies
+          <li style="visibility: hidden">Adobe leverages web components, a lot 
+          <li style="visibility: hidden">Umbraco is investing in them, too
+          <li style="visibility: hidden">Jacob Overgaard has the real scoop after the break
+          <li style="visibility: hidden">But, let's take an imaginary tour...
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 6; --row: 2;">
+      <div class="fixed-width">
+        <h3>Scaling beyond just one company</h3>
+        <ul>
+          <li>Web components are interoperable between companies
+          <li style="visibility: hidden">Adobe leverages web components, a lot 
+          <li style="visibility: hidden">Umbraco is investing in them, too
+          <li style="visibility: hidden">Jacob Overgaard has the real scoop after the break
+          <li style="visibility: hidden">But, let's take an imaginary tour...
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 6; --row: 3;">
+      <div class="fixed-width">
+        <h3>Scaling beyond just one company</h3>
+        <ul>
+          <li>Web components are interoperable between companies
+          <li>Adobe leverages web components, a lot 
+          <li style="visibility: hidden">Umbraco is investing in them, too
+          <li style="visibility: hidden">Jacob Overgaard has the real scoop after the break
+          <li style="visibility: hidden">But, let's take an imaginary tour...
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 6; --row: 4;">
+      <div class="fixed-width">
+        <h3>Scaling beyond just one company</h3>
+        <ul>
+          <li>Web components are interoperable between companies
+          <li>Adobe leverages web components, a lot 
+          <li>Umbraco is investing in them, too
+          <li style="visibility: hidden">Jacob Overgaard has the real scoop after the break
+          <li style="visibility: hidden">But, let's take an imaginary tour...
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 6; --row: 5;">
+      <div class="fixed-width">
+        <h3>Scaling beyond just one company</h3>
+        <ul>
+          <li>Web components are interoperable between companies
+          <li>Adobe leverages web components, a lot 
+          <li>Umbraco is investing in them, too
+          <li>Jacob Overgaard has the real scoop after the break
+          <li style="visibility: hidden">But, let's take an imaginary tour...
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 6; --row: 6;">
+      <div class="fixed-width">
+        <h3>Scaling beyond just one company</h3>
+        <ul>
+          <li>Web components are interoperable between companies
+          <li>Adobe leverages web components, a lot 
+          <li>Umbraco is investing in them, too
+          <li>Jacob Overgaard has the real scoop after the break
+          <li>But, let's take an imaginary tour...
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 6; --row: 7;">
+      <div class="fixed-width">
         <h3>Takeaway</h3>
-        <p>Better together</p>
-        <p>👨‍👩‍👧‍👧</p>
+        <p>Things are better together</p>
+        <p class="emoji">👨‍👩‍👧‍👧</p>
       </div>
     </p-slide>
     <p-slide style="--col: 7; --row: 0;">
       <div class="fixed-width">
         <h2>Takeaways</h2>
         <ul>
-          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; 🕵🏼
-          <li class="check">Custom elements are great for lazy loading; 😴 ... 🥳
-          <li class="check">Encapsulation via Shadow DOM focuses your work; 🎯
-          <li class="warning">Encapsulation requires extra planning; 📝
-          <li class="check">Web components are interoperable across tools; 🤝
-          <li class="check">Wrap micro-fontends quite nicely; 🎁
-          <li class="warning">Not awesome (yet) <em>in</em> micro-frontends; ⚔️
-          <li class="check">Better together! 👨‍👩‍👧‍👧
+          <li style="visibility: hidden" class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li style="visibility: hidden" class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li style="visibility: hidden" class="check">Encapsulation via Shadow DOM focuses your work; <span>🎯</span>
+          <li style="visibility: hidden" class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li style="visibility: hidden" class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li style="visibility: hidden" class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li style="visibility: hidden" class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li style="visibility: hidden" class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 7; --row: 1;">
+      <div class="fixed-width">
+        <h2>Takeaways</h2>
+        <ul>
+          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li style="visibility: hidden" class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li style="visibility: hidden" class="check">Encapsulation via Shadow DOM focuses your work; <span>🎯</span>
+          <li style="visibility: hidden" class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li style="visibility: hidden" class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li style="visibility: hidden" class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li style="visibility: hidden" class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li style="visibility: hidden" class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 7; --row: 2;">
+      <div class="fixed-width">
+        <h2>Takeaways</h2>
+        <ul>
+          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li style="visibility: hidden" class="check">Encapsulation via Shadow DOM focuses your work; <span>🎯</span>
+          <li style="visibility: hidden" class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li style="visibility: hidden" class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li style="visibility: hidden" class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li style="visibility: hidden" class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li style="visibility: hidden" class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 7; --row: 3;">
+      <div class="fixed-width">
+        <h2>Takeaways</h2>
+        <ul>
+          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li class="check">Encapsulation via Shadow DOM focuses your work; <span>🎯</span>
+          <li style="visibility: hidden" class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li style="visibility: hidden" class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li style="visibility: hidden" class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li style="visibility: hidden" class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li style="visibility: hidden" class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 7; --row: 4;">
+      <div class="fixed-width">
+        <h2>Takeaways</h2>
+        <ul>
+          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li class="check">Encapsulation via Shadow DOM focuses your work; <span>🎯</span>
+          <li class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li style="visibility: hidden" class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li style="visibility: hidden" class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li style="visibility: hidden" class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li style="visibility: hidden" class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 7; --row: 5;">
+      <div class="fixed-width">
+        <h2>Takeaways</h2>
+        <ul>
+          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li class="check">Encapsulation via Shadow DOM focuses your work; <span></h2>🎯</span>
+          <li class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li style="visibility: hidden" class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li style="visibility: hidden" class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li style="visibility: hidden" class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 7; --row: 6;">
+      <div class="fixed-width">
+        <h2>Takeaways</h2>
+        <ul>
+          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li class="check">Encapsulation via Shadow DOM focuses your work; <span>🎯</span>
+          <li class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li style="visibility: hidden" class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li style="visibility: hidden" class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 7; --row: 7;">
+      <div class="fixed-width">
+        <h2>Takeaways</h2>
+        <ul>
+          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li class="check">Encapsulation via Shadow DOM focuses your work; <span>🎯</span>
+          <li class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li style="visibility: hidden" class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
+        </ul>
+      </div>
+    </p-slide>
+    <p-slide style="--col: 7; --row: 8;">
+      <div class="fixed-width">
+        <h2>Takeaways</h2>
+        <ul>
+          <li class="check">You can see the custom elements used on a page with Custom Elements Locator; <span>🕵🏼</span>
+          <li class="check">Custom elements are great for lazy loading; <span>😴</span>
+          <li class="check">Encapsulation via Shadow DOM focuses your work; <span>🎯</span>
+          <li class="warning">Encapsulation requires extra planning; <span>📝</span>
+          <li class="check">Web components are interoperable across tools; <span>🤝</span>
+          <li class="check">Wrap micro-fontends quite nicely; <span>🎁</span>
+          <li class="warning">Not awesome (yet) <em>in</em> micro-frontends; <span>⚔️</span>
+          <li class="check">Things are better together! <span>👨‍👩‍👧‍👧</span>
         </ul>
       </div>
     </p-slide>
     <p-slide style="--col: 8; --row: 0;">
       <h1>Fin</h1>
-      <img alt="QR Code linking to Westbrook Johnson's website" slot="link" src=${react2} />
+      <div slot="link">
+        <a href="https://westbrookjohnson.com">
+          <img alt="QR Code linking to Westbrook Johnson's website" src=${westbrook} />
+          <span>https://westbrookjohnson.com</span>
+        </a>
+      </div>
     </p-slide>
   </p-canvas>
 `;
@@ -771,5 +1126,5 @@ const Template: Story<ArgTypes> = ({col = 0, row = 0}: ArgTypes) => html`
 export const App = Template.bind({});
 App.args = {
   row: 0,
-  col: 5,
+  col: 0,
 };

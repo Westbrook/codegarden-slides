@@ -18,20 +18,22 @@ export class Slide extends LitElement {
     ::slotted(:not([slot])) {
       z-index: 1;
     }
-    ::slotted(img[slot="staged"]) {
+    ::slotted(img[slot='staged']) {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
-    [name="link"]::slotted(*) {
+    [name='link']::slotted(*) {
       position: absolute;
       right: 0;
       bottom: 0;
-      width: 25%;
       height: auto;
     }
-    ::slotted([slot="footnote"]) {
+    [name='link']::slotted(img) {
+      max-width: 25vw;
+    }
+    ::slotted([slot='footnote']) {
       position: absolute;
       left: 0.5em;
       bottom: 0.5em;
